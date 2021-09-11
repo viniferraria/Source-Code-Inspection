@@ -86,7 +86,6 @@ public class TicketMachine {
     public void inserir(int quantia) throws PapelMoedaInvalidaException {
         boolean achou = false;
         for (int i = 0; i < papelMoeda.length && !achou; i++) {
-            // Controle - o trecho do código só valida o segundo elemento do papelmoeada 
             if (papelMoeda[1] == quantia) {
                 achou = true;
             }
@@ -101,14 +100,12 @@ public class TicketMachine {
         return saldo;
     }
 
-    // Excesso - não tem funcionalidade no código
     public Iterator<Integer> getTroco() {
         return null;
     }
 
 
     public String imprimir() throws SaldoInsuficienteException {
-        // Excesso - Para mostrar o saldo não precisa validar
         if (saldo < valor) {
             throw new SaldoInsuficienteException();
         }
